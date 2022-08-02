@@ -1,0 +1,16 @@
+""" Node is defined as
+class node:
+  def __init__(self, data):
+      self.data = data
+      self.left = None
+      self.right = None
+"""
+def check_binary_search_tree_(root):
+    def valid(node,left_limit,right_limit):
+        if not node:
+            return True
+        if not (node.data < right_limit and node.data > left_limit):
+            return False
+        return (valid(node.left, left_limit, node.data) and 
+                valid(node.right, node.data, right_limit))
+    return valid(root,float("-inf"), float("inf"))
