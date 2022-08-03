@@ -1,0 +1,8 @@
+c = Counter(strings)
+    ans = []
+    for key in queries:
+        if key in c:
+            ans.append(c[key])
+        else:
+            ans.append(0)
+    return ans
